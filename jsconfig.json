@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@router": ["./src/router"],
+        "@pages": ["./src/pages"],
+        "@pages/*": ["./src/pages/*"],
+        "@components": ["./src/components"],
+        "@components/*": ["./src/components/*"],
+        "@helpers": ["./src/helpers"],
+        "@helpers/*": ["./src/helpers/*"],
+        "@redux": ["./src/redux"]
+      }
+    },
+    "exclude": ["node_modules", "public/build"]
+  }
+  
