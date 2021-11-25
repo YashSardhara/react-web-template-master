@@ -1,9 +1,9 @@
-import Login from "../pages/login";
-import SignUp from "../pages/signup";
+import Album from "../pages/gallery/Album";
+import HomePage from "../pages/home/HomePage";
 
 export const menuItem = [
-  { path: "/login", component: Login },
-  { path: "/signup", component: SignUp },
+  { path: "/album", component: Album },
+  { path: "/", component: HomePage },
 
   // { component: NotFound },
 ];
