@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
+    "@material/switch": "^13.0.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "formik": "^2.2.9",
     "global": "^4.4.0",
