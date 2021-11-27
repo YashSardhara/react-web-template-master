@@ -2,13 +2,12 @@ import React, { createContext } from "react";
 import Router from "./router/index";
 
 const isDark = createContext();
+  
 const App = () => {
   return (
-    <>
-      <isDark.Provider value={""}>
-        <Router />
-      </isDark.Provider>
-    </>
+    <isDark.Provider value={""}>
+      <Router />
+    </isDark.Provider>
   );
 };
 

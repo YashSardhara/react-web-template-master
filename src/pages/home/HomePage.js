@@ -6,7 +6,7 @@ const HomePage = () => {
       <isDark.Consumer>
         {(theme) => {
           return (
-            <div className={`container${theme}`}>
+            <div className={`container${theme} mt-4`}>
               <h1>this is HomePage </h1>
             </div>
           );

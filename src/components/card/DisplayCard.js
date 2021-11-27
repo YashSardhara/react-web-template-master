@@ -18,7 +18,7 @@ const DisplayCard = () => {
       <isDark.Consumer>
         {(theme) => {
           return (
-            <div className={`container${theme}`}>
+            <div className={`container${theme} mt-4`}>
               <h2> Developer Album</h2>
               <div className={`container${theme}`}>
                 {(userData || []).map((curElem, index) => {

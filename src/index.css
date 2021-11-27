@@ -39,11 +39,11 @@ code {
   text-align: center;
   background-color: #1b1b1b;
 }
-.card-Ui div{
-display: flex;
-justify-content: center;
-align-items: center;
-align-content: center;
+.card-Ui div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 h2 {
@@ -59,38 +59,34 @@ h2 {
   background-color: #6d6d6dbf;
   border: 0.5px rgba(105, 105, 105, 0.111) solid;
 }
-
+.inline-view {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
 img {
   border-radius: 5px 5px 0 0;
 }
 
-text{
+text {
   color: #000;
 }
-.text-dark{
-  color: #FFF;
-}
-/* 
-.dark-bg{
-  color: #fff;
-  background-color: #303030;
-}
-.white-bg{
-  color: #000;
-  background-color: #ffffff;
-} */
+.text-dark {
+color: #fff;}
+
 
 .container {
   height: 100%;
-  padding: 2px 16px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
   align-items: center;
- background-color: #fff;
-  color:black ;
+  background-color: #fff;
+  color: black;
 }
 .container-dark {
   background-color: black;
@@ -105,39 +101,54 @@ text{
   align-items: center;
 }
 .HeaderBar {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  z-index: 2;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 0px 47px;
-  height: 50px;
   align-items: center;
-  background: #eeeeee;
-  /* color: #141414; */
+  background: #ffffff;
+  box-shadow:0px 0px 5px 0px #999999;
+  color: #141414;
   font-size: 20px;
   text-decoration: none;
-
 }
-.HeaderBar-dark  {
+.HeaderBar-dark {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  z-index: 2;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 0px 47px;
-  height: 50px;
   align-items: center;
   background: #141414;
   color: #fff;
   font-size: 20px;
   text-decoration: none;
+  box-shadow: 0px 0px 5px 0px #999999;
 }
 .Navbar {
   display: flex;
   padding: 0px 47px;
   align-items: center;
-  width: 200px;
-  justify-content: space-between;
+  width: 282px;
+  justify-content: space-around;
+  align-content: center;
+  color: inherit;
 }
-a{
-    cursor: pointer;
-    text-decoration: none;
-    text-transform: capitalize;
+a {
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: inherit;
+}
+.mt-4{
+  margin-top: 4rem;
 }
