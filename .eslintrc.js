@@ -12,7 +12,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: { "react/prop-types": off },
+  rules: {},
   settings: {
     "import/resolver": {
       node: {
