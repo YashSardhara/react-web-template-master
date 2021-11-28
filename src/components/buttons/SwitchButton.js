@@ -7,13 +7,14 @@ const SwitchButton = (props) => {
 
   const handleSwitchEvent = (nextChecked) => {
     setChecked(nextChecked);
+    props.handleSwitch(checked);
   };
 
   return (
-    <div onClick={() => props.handleSwitch(checked)}>
+    <div>
       <label className="inline-view">
         <Switch onChange={handleSwitchEvent} checked={checked} />
-        <p> {checked ? " Dark  " : " Light "}</p>
+        <p> {checked ? "Dark" : " Light "}</p>
       </label>
     </div>
   );

@@ -16,11 +16,9 @@ const items = [
 
 const Header = (props) => {
   const menuItem = items.map((lists, index) => (
-    <>
-      <div key={index}>
-        <a href={lists.to}>{lists.name}</a>
-      </div>
-    </>
+    <div key={index}>
+      <a href={lists.to}>{lists.name}</a>
+    </div>
   ));
 
   return (

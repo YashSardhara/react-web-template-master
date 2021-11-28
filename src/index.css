@@ -64,7 +64,8 @@ h2 {
   flex-direction: row;
   align-content: center;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 7rem;
 }
 img {
   border-radius: 5px 5px 0 0;
@@ -138,7 +139,7 @@ color: #fff;}
   display: flex;
   padding: 0px 47px;
   align-items: center;
-  width: 282px;
+  width: 20rem;
   justify-content: space-around;
   align-content: center;
   color: inherit;
