@@ -1,6 +1,7 @@
 import SwitchButton from "../buttons/SwitchButton";
 import React from "react";
 import { isDark } from "src/App";
+import PropTypes from "prop-types";
 
 const items = [
   {
@@ -13,7 +14,7 @@ const items = [
   },
 ];
 
-const Header = () => {
+const Header = (props) => {
   const menuItem = items.map((lists, index) => (
     <>
       <div key={index}>
@@ -21,16 +22,17 @@ const Header = () => {
       </div>
     </>
   ));
+
   return (
     <>
       <isDark.Consumer>
         {(theme) => {
           return (
-            <div className={`HeaderBar${theme === "-dark" ? "-dark" : ""}`}>
+            <div className={`HeaderBar${theme}`}>
               <div>Logo</div>
               <div className="Navbar">
                 {menuItem}
-                <SwitchButton />
+                <SwitchButton handleSwitch={props.handleSwitch} />
               </div>
             </div>
           );
@@ -39,5 +41,11 @@ const Header = () => {
     </>
   );
 };
-
+Header.propTypes = {
+  handleSwitch: PropTypes.func,
+};
 export default Header;
+
+
+
+

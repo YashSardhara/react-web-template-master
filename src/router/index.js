@@ -2,13 +2,13 @@ import Header from "../components/header/Header";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { menuItem } from "./routes";
+import PropTypes from "prop-types";
 
-const Router = () => {
-
+const Router = (props) => {
   return (
     <>
       <div className="container">
-        <Header />
+        <Header handleSwitch={props.handleSwitch} />
         <BrowserRouter>
           {/* <Redirect to="/login" /> */}
           <Switch>
@@ -21,5 +21,7 @@ const Router = () => {
     </>
   );
 };
-
+Router.propTypes = {
+  handleSwitch: PropTypes.func,
+};
 export default Router;

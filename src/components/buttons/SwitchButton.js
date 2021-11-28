@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import Switch from "react-switch";
+import PropTypes from "prop-types";
 
-const SwitchButton = () => {
+const SwitchButton = (props) => {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (nextChecked) => {
+  const handleSwitchEvent = (nextChecked) => {
     setChecked(nextChecked);
   };
 
   return (
-    <>
+    <div onClick={() => props.handleSwitch(checked)}>
       <label className="inline-view">
-        <Switch onChange={handleChange} checked={checked} className="" />
+        <Switch onChange={handleSwitchEvent} checked={checked} />
+        <p> {checked ? " Dark  " : " Light "}</p>
       </label>
-      <p> {checked ? " Dark  " : " Light "}</p>
-    </>
+    </div>
   );
 };
 
-/* <p>
-  The switch is <span>{checked ? "on" : "off"}</span>.
-</p> */
-
+SwitchButton.propTypes = {
+  handleSwitch: PropTypes.func,
+};
 export default SwitchButton;

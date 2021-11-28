@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { isDark } from "src/App";
+import PropTypes from "prop-types";
 
-const DisplayCard = () => {
+const DisplayCard = ({ TitleName }) => {
   const [userData, setUser] = useState();
 
   const getData = async () => {
@@ -19,7 +20,7 @@ const DisplayCard = () => {
         {(theme) => {
           return (
             <div className={`container${theme} mt-4`}>
-              <h2> Developer Album</h2>
+              <h2> {TitleName}</h2>
               <div className={`container${theme}`}>
                 {(userData || []).map((curElem, index) => {
                   return (
@@ -44,5 +45,8 @@ const DisplayCard = () => {
     </>
   );
 };
-
+DisplayCard.propTypes = {
+  TitleName: PropTypes.any,
+};
 export default DisplayCard;
+
