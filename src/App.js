@@ -1,11 +1,19 @@
-import React from "react";
-// import Router from "./router";
-// import SignUp from "src/pages/signup/index";
-import UseEffectAPI from 'src/components/useEffectAPI/useEffectAPI'
+import React, { createContext, useState } from "react";
+import Router from "./router/index";
 
-const App = ()=> {
-  return <UseEffectAPI />
-  // return <SignUp />
-}
+const isDark = createContext();
+
+const App = () => {
+  const [themeProvider, setThemeProvider] = useState("");
+  const handleSwitch = (e) => {
+    !e == true ? setThemeProvider("-dark") : setThemeProvider("");
+  };
+  return (
+    <isDark.Provider value={themeProvider}>
+      <Router handleSwitch={handleSwitch} />
+    </isDark.Provider>
+  );
+};
 
 export default App;
+export { isDark };
