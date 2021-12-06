@@ -12,11 +12,15 @@ const items = [
     name: "Album",
     to: "/album",
   },
+  {
+    name: "Signup",
+    to: "/signup",
+  },
 ];
 
 const Header = (props) => {
   const menuItem = items.map((lists, index) => (
-    <div key={index}>
+    <div key={index} className="mx-3">
       <a href={lists.to}>{lists.name}</a>
     </div>
   ));
