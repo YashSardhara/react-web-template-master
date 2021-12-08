@@ -24,12 +24,12 @@
 import React, { createContext, useState } from "react";
 import Router from "./router/index";
 
-const isDark = createContext("");
+const isDark = createContext(true);
 
 const App = () => {
   const [themeProvider, setThemeProvider] = useState("");
   const handleSwitch = (e) => {
-    !e == true ? setThemeProvider("-dark") : setThemeProvider("");
+    !e == true ? setThemeProvider(" -dark dark") : setThemeProvider("");
   };
   return (
     <>

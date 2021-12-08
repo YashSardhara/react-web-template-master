@@ -19,12 +19,12 @@ const DisplayCard = ({ TitleName }) => {
       <isDark.Consumer>
         {(theme) => {
           return (
-            <div className={`container${theme} mt-4`}>
+            <div className={`container ${theme} mt-4`}>
               <h2> {TitleName}</h2>
-              <div className={`container${theme}`}>
+              <div className={`container ${theme}`}>
                 {(userData || []).map((curElem, index) => {
                   return (
-                    <div key={index + curElem.id} className={`card-Ui${theme}`}>
+                    <div key={index + curElem.id} className={`card-Ui ${theme}`}>
                       <div style={{ flexDirection: "row" }}>
                         <h1>Profile</h1>
                       </div>
