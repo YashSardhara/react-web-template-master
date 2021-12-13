@@ -1,7 +1,8 @@
 import Stores from "../store";
 import Actions from "../Actions/countActions";
 
-export default countDispatcher = {
+// eslint-disable-next-line no-undef
+export default  countDispatcher = {
   setIncrement: () => {
     Stores.dispatch({ type: Actions.IncNum });
   },
