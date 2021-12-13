@@ -1,6 +1,10 @@
-const CountActions = {
-  IncNum: "INCREMENT",
-  DecNum: "DECREMENT",
+export const IncNum = () => {
+  return {
+    type: "INCREMENT",
+  };
 };
-
-export default CountActions;
+export const DecNum = () => {
+  return {
+    type: "DECREMENT",
+  };
+};

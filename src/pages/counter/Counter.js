@@ -1,7 +1,11 @@
 import React from "react";
-import store from "../../redux/store";
+import { IncNum } from "../../redux/actions/countActions";
+import { DecNum } from "../../redux/actions/countActions";
+import { useSelector, useDispatch } from "react-redux";
 const Counter = () => {
-  console.log(store);
+  const changeTheNumber = useSelector((state) => state.changeTheNumber);
+  console.log(changeTheNumber);
+  const dispatch = useDispatch();
   return (
     <>
       <div className="main-div mt-4">
@@ -9,11 +13,17 @@ const Counter = () => {
           <h1>Increment/Decrement counter</h1>
 
           <div className="quantity">
-            <a className="quantity__minus" title="Decrement" onClick={""}>
+            <a className="quantity__minus" title="Decrement" onClick={() => dispatch(DecNum())}>
               <span>-</span>
             </a>
-            <input name="quantity" type="text" className="quantity__input" value={"0"} />
-            <a className="quantity__plus" title="Increment" onClick={""}>
+            <input
+              name="quantity"
+              type="text"
+              className="quantity__input"
+              readOnly
+              value={changeTheNumber}
+            />
+            <a className="quantity__plus" title="Increment" onClick={() => dispatch(IncNum())}>
               <span>+</span>
             </a>
           </div>
@@ -22,5 +32,4 @@ const Counter = () => {
     </>
   );
 };
-
 export default Counter;

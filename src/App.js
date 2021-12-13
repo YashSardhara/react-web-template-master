@@ -23,6 +23,8 @@
 
 import React, { createContext, useState } from "react";
 import Router from "./router/index";
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 const isDark = createContext(true);
 
@@ -33,9 +35,11 @@ const App = () => {
   };
   return (
     <>
-      <isDark.Provider value={themeProvider}>
-        <Router handleSwitch={handleSwitch} />
-      </isDark.Provider>
+      <Provider store={store}>
+        <isDark.Provider value={themeProvider}>
+          <Router handleSwitch={handleSwitch} />
+        </isDark.Provider>
+      </Provider>
     </>
   );
 };
