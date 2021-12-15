@@ -1,9 +1,10 @@
 // Higher Order Class to make all network calls
-import { Stores } from "@redux";
-import { HTTP_METHODS } from "./HttpMethods";
-import { ServerConfig } from "./ServerConfig";
-import { Response } from "./ResponseParser";
-import { refreshToken } from "./TokenRefresher";
+/* eslint-disable no-unused-vars */
+import store from "src/redux/store";
+import { HTTP_METHODS } from "./httpMethods";
+import { ServerConfig } from "./serverConfig";
+import { Response } from "./responseParser";
+import { refreshToken } from "./tokenRefresher";
 
 // ********************
 // Create a new instance of this Network class and make api call
@@ -37,10 +38,10 @@ export class NetworkManager {
     let data = [];
     let success = false;
     let code = 200;
-    const state = Stores.getState().app;
+    const state = store.getState().app;
 
     try {
-      const url = `${this.baseUrl}/${this.endPointVersion}${this.endpoint}${this.requestParams}`;
+      const url = `${this.endpoint}${this.requestParams}`;
 
       const options = {
         method: this.method,
@@ -60,34 +61,33 @@ export class NetworkManager {
       // execute fetch call & parse json response
       const res = await fetch(url, options);
       const response = await res.json();
+      return response;
+      // console.log(response);
 
-      data = response.data;
-      success = response.success;
-      code = response.status_code;
-      error = response.error;
+      // data = response.data;
+      // success = response.success;
+      // code = response.status_code;
+      // error = response.error;
 
-      if (code === 401) {
-        // refresh the token
-        await refreshToken(state.token);
-        // pass the control back to network manager
-        const refRes = await this.httpRequest(header);
-        // re-assign response
-        data = refRes.data;
-        success = refRes.success;
-        code = refRes.code;
-        error = refRes.error;
-      }
+      // if (code === 401) {
+      //   // refresh the token
+      //   await refreshToken(state.token);
+      //   // pass the control back to network manager
+      //   const refRes = await this.httpRequest(header);
+      //   // re-assign response
+      //   data = refRes.data;
+      //   success = refRes.success;
+      //   code = refRes.code;
+      //   error = refRes.error;
+      // }
 
-      if (code >= 400 && code !== 401) {
-        // Dispatch common snackbar if there's any api error
-      }
+      // if (code >= 400 && code !== 401) {
+      //   // Dispatch common snackbar if there's any api error
+      // }
     } catch (err) {
       // Catch all errors
       console.log("err ", err);
       // display error
-    } finally {
-      // Return whatever is executed and processed
-      return new Response(success, data, error, code);
     }
   };
 
