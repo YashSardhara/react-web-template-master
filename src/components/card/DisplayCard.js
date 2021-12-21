@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { isDark } from "src/App";
 import PropTypes from "prop-types";
+import { NetworkManager } from "../../network/networkManager";
+import { API } from "src/network";
 
 const DisplayCard = ({ TitleName }) => {
   const [userData, setUser] = useState();
 
   const getData = async () => {
-    const response = await fetch("https://picsum.photos/v2/list?page=2&limit=50");
+    // const response = await fetch("https://picsum.photos/v2/list?page=2&limit=50");
+    let PhotoApi = new NetworkManager(API.PHOTO);
     setUser(await response.json());
   };
 
@@ -49,4 +52,3 @@ DisplayCard.propTypes = {
   TitleName: PropTypes.any,
 };
 export default DisplayCard;
-
