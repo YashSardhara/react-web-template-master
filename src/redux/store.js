@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from "redux";
-import AppReducer from "../reducers/appReducer";
+import AppReducer from "../redux/reducers/appReducer";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 
@@ -17,5 +17,5 @@ const rootReducer = combineReducers(AllReducer);
 const persistedReducer = persistReducer(PersistConfig, rootReducer);
 
 const store = createStore(persistedReducer);
-export const persistor = persistStore(store);
+export const Persistor = persistStore(store);
 export default store;

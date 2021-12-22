@@ -1,6 +1,6 @@
 // default exporter on required methods
 
-import { NetworkManager } from "./NetworkManager";
+import { NetworkManager } from "./networkManager";
 import { API } from "./endpoints";
 import { ServerConfig } from "./serverConfig";
 

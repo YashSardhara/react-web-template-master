@@ -1,6 +1,6 @@
 // App wide dispatcher
 
-import Stores from "../Stores/Store";
+import Stores from "../store";
 import Actions from "../Actions/AppActions";
 
 export default AppDispatcher = {
