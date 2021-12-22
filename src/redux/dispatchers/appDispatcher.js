@@ -1,9 +1,9 @@
 // App wide dispatcher
 
-import Stores from "../Stores/Store";
-import Actions from "../Actions/AppActions";
+import Stores from "../store";
+import Actions from "../actions/appActions";
 
-export default AppDispatcher = {
+const appDispatcher = {
   setUserLoggedIn: (data) => {
     Stores.dispatch({ type: Actions.SET_TOKEN, data: data.tokens });
     Stores.dispatch({ type: Actions.LOGIN, data: data.user });
@@ -19,3 +19,4 @@ export default AppDispatcher = {
     Stores.dispatch({ type: Actions.LOGIN, data });
   },
 };
+export default appDispatcher;
